@@ -15,6 +15,25 @@
   }
   </script>
   <meta charset="UTF-8">
+  <script>
+    // Check if the user has already manually chosen a language to prevent a redirect loop
+    if (!sessionStorage.getItem('languageSelected')) {
+      // Get the browser language (e.g., 'en-US', 'fr-FR')
+      var userLang = navigator.language || navigator.userLanguage; 
+      // If it starts with 'en', redirect to the English page
+      if (userLang.startsWith('en')) {
+        window.location.href = "en.html";
+      }
+    }
+    
+    // Function to set storage when a user manually clicks the FR/EN buttons
+    function setManualLanguage() {
+      sessionStorage.setItem('languageSelected', 'true');
+    }
+  </script>
+  <link rel="alternate" hreflang="fr" href="https://noahroetman.github.io/" />
+  <link rel="alternate" hreflang="en" href="https://noahroetman.github.io/en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://noahroetman.github.io/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noah Roetman — Mathématiques et applications</title>
   <meta name="description" content="Site personnel de Noah Roetman : Travaux sur les fonctions elliptiques de Jacobi et Pendule Simple">
@@ -186,7 +205,13 @@
 <div class="page">
 
   <header>
-    <div class="site-label">noahroetman.github.io</div>
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <div class="site-label">noahroetman.github.io</div>
+      <div style="font-family: var(--mono); font-size: 0.7rem;">
+        <strong style="color: var(--ink);">FR</strong> | 
+        <a href="en.html" onclick="setManualLanguage()" style="color: var(--muted); text-decoration: none;">EN</a>
+      </div>
+    </div>
     <h1>Noah Roetman</h1>
     <p class="tagline">Mathématiques et applications</p>
   </header>
