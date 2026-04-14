@@ -75,8 +75,15 @@
     .header-main {
       display: flex;
       justify-content: space-between;
-      align-items: center; /* Vertical alignment */
+      align-items: center;
       margin-bottom: 8px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
     }
 
     .site-label {
@@ -85,7 +92,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 20px;
+      margin-bottom: 0;
     }
 
     h1 {
@@ -215,13 +222,15 @@
     .lang-btn {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       text-decoration: none;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 4px;
       border: 1px solid var(--rule);
       background: white;
       transition: all 0.2s ease;
+      font-family: var(--mono);
+      font-size: 0.65rem;
     }
 
     .flag {
