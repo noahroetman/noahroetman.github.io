@@ -203,15 +203,19 @@
 <div class="page">
 
   <header>
-    <div style="display: flex; justify-content: space-between; align-items: baseline;">
-      <div class="site-label">noahroetman.github.io</div>
-      <div style="font-family: var(--mono); font-size: 0.7rem;">
-        <strong style="color: var(--ink);">FR</strong> | 
-        <a href="index_EN.html" onclick="setManualLanguage()" style="color: var(--muted); text-decoration: none;">EN</a>
-      </div>
+    <div class="lang-toggle">
+      <a href="index_FR.html" class="lang-btn fr-btn active">
+        <span class="flag">FR</span>
+        <span class="lang-text">Français</span>
+      </a>
+      <span class="separator"></span>
+      <a href="index_EN.html" onclick="setManualLanguage()" class="lang-btn en-btn">
+        <span class="flag">EN</span>
+        <span class="lang-text">English</span>
+      </a>
     </div>
     <h1>Noah Roetman</h1>
-    <p class="tagline">Mathématiques et applications</p>
+    <p class="tagline">Mathematics and applications</p>
   </header>
 
   <section>
