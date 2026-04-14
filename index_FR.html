@@ -16,17 +16,13 @@
   </script>
   <meta charset="UTF-8">
   <script>
-    // Check if the user has already manually chosen a language to prevent a redirect loop
     if (!sessionStorage.getItem('languageSelected')) {
-      // Get the browser language (e.g., 'en-US', 'fr-FR')
       var userLang = navigator.language || navigator.userLanguage; 
-      // If it starts with 'en', redirect to the English page
       if (userLang.startsWith('en')) {
         window.location.href = "en.html";
       }
     }
     
-    // Function to set storage when a user manually clicks the FR/EN buttons
     function setManualLanguage() {
       sessionStorage.setItem('languageSelected', 'true');
     }
