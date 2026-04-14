@@ -16,13 +16,6 @@
   </script>
   <meta charset="UTF-8">
   <script>
-    if (!sessionStorage.getItem('languageSelected')) {
-      var userLang = navigator.language || navigator.userLanguage; 
-      if (userLang.startsWith('en')) {
-        window.location.href = "en.html";
-      }
-    }
-    
     function setManualLanguage() {
       sessionStorage.setItem('languageSelected', 'true');
     }
