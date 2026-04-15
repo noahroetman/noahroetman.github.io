@@ -99,7 +99,10 @@
     }
 
     h3 {
-      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
       margin-bottom: 10px;
     }
 
@@ -245,6 +248,18 @@
       color: var(--ink);
       font-weight: 500;
     }
+
+    .badge-niveau {
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      color: #888;
+      background-color: transparent;
+      white-space: nowrap;
+    }
     
   </style>
   
@@ -271,7 +286,7 @@
   <section>
     <h2>Publications</h2>
 
-    <h3>Fonctions Elliptiques de Jacobi</h3>
+    <h3>Fonctions Elliptiques de Jacobi <span class="badge-niveau">MP | L2</span></h3>
     
     <p>
       Une étude complète allant de la géométrie de l'ellipse à la double périodicité complexe. 
@@ -289,7 +304,7 @@
       </a>
     </div>
 
-    <h3>Pendule Simple</h3>
+    <h3>Pendule Simple <span class="badge-niveau">MPSI | L1</span></h3>
       
     <p>
       Contrairement à l'approximation des petits angles, cette démonstration utilise 
