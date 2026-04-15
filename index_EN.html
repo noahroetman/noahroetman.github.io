@@ -103,7 +103,10 @@
     }
 
     h3 {
-      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
       margin-bottom: 10px;
     }
 
@@ -249,6 +252,19 @@
       color: var(--ink);
       font-weight: 500;
     }
+
+    .badge-niveau {
+      font-family: var(--mono);
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      color: #888;
+      background-color: transparent;
+      white-space: nowrap;
+    }
     
   </style>
   
@@ -274,12 +290,12 @@
   <section>
     <h2>Publications</h2>
 
-    <h3>Jacobi Elliptic Functions</h3>
+    <h3>Jacobi Elliptic Functions <span class="badge-niveau">Undergrad | Y2</span></h3>
     
     <p>
       A comprehensive study ranging from the geometry of the ellipse to complex double periodicity. 
       This course establishes the mathematical foundations necessary to manipulate these functions and understand how 
-      they replace classical trigonometric tools in non-linear problems.
+      they replace classical trigonometric tools in non-linear problems. Perfect for a research project.
     </p>
     
     <div class="files" style="margin-bottom: 30px">
@@ -292,7 +308,7 @@
       </a>
     </div>
 
-    <h3>Simple Pendulum</h3>
+    <h3>Simple Pendulum <span class="badge-niveau">Undergrad | Y1</span></h3>
       
     <p>
       Unlike the small-angle approximation, this proof uses Jacobi functions to establish an exact analytical solution. 
