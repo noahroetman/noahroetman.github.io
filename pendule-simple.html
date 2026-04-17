@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Résolution Exacte du Pendule Simple sans Approximation des Petits Angles — Noah Roetman</title>
-  <meta name="description" content="Solution analytique exacte du pendule simple pour toute amplitude initiale, exprimée en termes de fonctions elliptiques de Jacobi sn. Démonstration et code Python. TIPE MPSI.">
+  <title>Résolution Exacte du Pendule Simple</title>
+  <meta name="description" content="Solution analytique exacte du pendule simple pour toute amplitude initiale, exprimée en termes de fonctions elliptiques de Jacobi. Démonstration et visualisation. TIPE MPSI.">
 
   <link rel="canonical" href="https://noahroetman.github.io/pendule-simple.html" />
   <link rel="alternate" hreflang="fr" href="https://noahroetman.github.io/pendule-simple.html" />
@@ -131,7 +131,6 @@
     <div class="meta">
       <span>Noah Roetman</span>
       <span class="badge">MPSI · L1</span>
-      <span>2 pages · 2026</span>
     </div>
   </header>
 
@@ -139,23 +138,15 @@
 
     <h2>Contexte</h2>
     <p>
-      L'équation du mouvement du pendule simple, <strong>θ̈ + (g/l) sin θ = 0</strong>, est exacte 
-      mais non linéaire. L'approximation des petits angles (sin θ ≈ θ) la linéarise et donne 
-      une solution sinusoïdale — mais cette approximation n'est valide qu'en dessous d'environ 10°. 
+      L'équation du mouvement du pendule simple, est non linéaire. L'approximation des petits angles (sin θ ≈ θ) donne 
+      une solution sinusoïdale — mais cette approximation n'est valide qu'en dessous d'environ 10°.
       Au-delà, la période réelle s'allonge et l'erreur devient significative.
     </p>
     <p>
       En partant de la conservation de l'énergie, on peut exprimer θ(t) de manière exacte 
       pour toute amplitude initiale θ₀, grâce aux fonctions elliptiques de Jacobi. 
       La démonstration complète est dans le PDF.
-    </p>
-
-    <h2>Résultat</h2>
-    <p>
-      La solution exacte s'écrit <strong>θ(t) = 2 arcsin(k · sn(t√(g/l), k))</strong>, 
-      avec <strong>k = sin(θ₀/2)</strong>. La période exacte est 
-      <strong>T = 4√(l/g) · K(k)</strong>, où K(k) est l'intégrale elliptique complète de première espèce. 
-      Le code Python ci-dessous compare cette solution à l'intégration numérique par <code>odeint</code>.
+      Le code Python ci-dessous compare cette solution à l'intégration numérique par odeint.
     </p>
 
     <h2>Téléchargements</h2>
@@ -169,7 +160,7 @@
       </a>
       <a class="file-card" href="Code Pendule Simple (FR).py" download="Code Pendule Simple (FR).py">
         <div class="file-info">
-          <div class="file-name">Visualisation — Solution Exacte VS Odeint</div>
+          <div class="file-name">Visualisation - Solution Exacte VS Odeint</div>
           <div class="file-desc">Python · 39 Lignes</div>
         </div>
         <div class="file-icon">↓ py</div>
