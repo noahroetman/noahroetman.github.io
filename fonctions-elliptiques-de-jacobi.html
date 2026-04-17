@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fonctions Elliptiques de Jacobi : sn, cn, dn — Théorie et Applications — Noah Roetman</title>
+  <meta name="description" content="Cours complet sur les fonctions elliptiques de Jacobi (sn, cn, dn) : géométrie de l'ellipse, intégrales elliptiques, double périodicité complexe. TIPE MPSI/MP, L2.">
+
+  <link rel="canonical" href="https://noahroetman.github.io/fonctions-elliptiques-de-jacobi.html" />
+  <link rel="alternate" hreflang="fr" href="https://noahroetman.github.io/fonctions-elliptiques-de-jacobi.html" />
+  <link rel="alternate" hreflang="en" href="https://noahroetman.github.io/jacobi-elliptic-functions.html" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Fonctions Elliptiques de Jacobi — Théorie et Applications",
+    "author": { "@type": "Person", "name": "Noah Roetman", "url": "https://noahroetman.github.io/" },
+    "inLanguage": "fr",
+    "url": "https://noahroetman.github.io/fonctions-elliptiques-de-jacobi.html",
+    "description": "Cours complet sur les fonctions elliptiques de Jacobi : sn, cn, dn, intégrales elliptiques de première espèce, double périodicité, applications en mécanique non linéaire.",
+    "about": [
+      { "@type": "Thing", "name": "Fonctions elliptiques de Jacobi" },
+      { "@type": "Thing", "name": "Intégrales elliptiques" },
+      { "@type": "Thing", "name": "TIPE MPSI MP" },
+      { "@type": "Thing", "name": "Mécanique non linéaire" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f7f5f0; --ink: #1a1a18; --muted: #6b6860;
+      --accent: #2a4a7f; --rule: #d4d0c8;
+      --serif: 'EB Garamond', Georgia, serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+    html { font-size: 18px; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.8; min-height: 100vh; }
+    .page { max-width: 680px; margin: 0 auto; padding: 80px 32px 120px; }
+
+    header { border-bottom: 1px solid var(--rule); padding-bottom: 40px; margin-bottom: 64px; }
+    .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+
+    .home-btn {
+      font-family: var(--mono); font-size: 0.75rem; text-decoration: none;
+      color: var(--muted); display: flex; align-items: center; gap: 6px;
+      transition: color 0.2s;
+    }
+    .home-btn:hover { color: var(--accent); }
+    .home-icon { font-size: 0.85rem; }
+
+    h1 { font-size: 2rem; font-weight: 400; line-height: 1.25; margin-bottom: 12px; }
+    .meta {
+      font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+    }
+    .badge {
+      font-family: var(--mono); font-size: 0.62rem; font-weight: 500;
+      text-transform: uppercase; border: 1px solid #ddd; border-radius: 4px;
+      color: #999; padding: 2px 8px;
+    }
+
+    h2 { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 48px; margin-bottom: 18px; }
+    p { font-size: 1rem; margin-bottom: 1em; color: var(--ink); }
+
+    .files { display: grid; gap: 14px; margin-top: 16px; }
+    .file-card {
+      display: flex; align-items: center; justify-content: space-between;
+      background: white; border: 1px solid var(--rule);
+      padding: 20px 24px; text-decoration: none; color: var(--ink);
+      transition: border-color 0.2s; gap: 16px; border-radius: 4px;
+    }
+    .file-card:hover { border-color: var(--accent); }
+    .file-info { flex: 1; }
+    .file-name { font-size: 1rem; font-weight: 500; margin-bottom: 3px; }
+    .file-desc { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; }
+    .file-icon {
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--accent); white-space: nowrap;
+      border: 1px solid var(--accent); padding: 4px 10px; opacity: 0.75;
+      transition: opacity 0.2s; border-radius: 4px;
+    }
+    .file-card:hover .file-icon { opacity: 1; }
+
+    .references { margin-top: 30px; font-size: 0.8em; opacity: 0.4; }
+
+    .lang-toggle { display: flex; align-items: center; gap: 8px; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 5px; text-decoration: none;
+      padding: 3px 8px; border-radius: 4px; border: 1px solid var(--rule);
+      background: white; transition: all 0.2s ease; font-family: var(--mono); font-size: 0.8rem;
+    }
+    .flag { font-size: 0.55rem; font-weight: bold; background: var(--ink); color: var(--bg); padding: 2px 4px; border-radius: 2px; line-height: 1; }
+    .lang-text { font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+    .lang-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .lang-btn.active { background: #ebe9e4; border-color: var(--muted); }
+    .lang-btn.active .lang-text { color: var(--ink); font-weight: 500; }
+
+    footer {
+      border-top: 1px solid var(--rule); margin-top: 80px; padding-top: 32px;
+      font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em;
+      color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-top">
+      <a href="index.html" class="home-btn"><span class="home-icon">⌂</span> Accueil</a>
+      <div class="lang-toggle">
+        <a href="fonctions-elliptiques-de-jacobi.html" class="lang-btn active"><span class="flag">FR</span><span class="lang-text">🇫🇷</span></a>
+        <a href="jacobi-elliptic-functions.html" class="lang-btn"><span class="flag">EN</span><span class="lang-text">🇺🇸</span></a>
+      </div>
+    </div>
+    <h1>Fonctions Elliptiques de Jacobi</h1>
+    <div class="meta">
+      <span>Noah Roetman</span>
+      <span class="badge">MP · L2</span>
+      <span>24 pages · 2026</span>
+    </div>
+  </header>
+
+  <section>
+
+    <h2>À propos</h2>
+    <p>
+      Les fonctions elliptiques de Jacobi — <strong>sn</strong>, <strong>cn</strong>, <strong>dn</strong> — 
+      généralisent les fonctions trigonométriques aux systèmes non linéaires. Elles émergent naturellement 
+      de l'inversion des intégrales elliptiques de première espèce et possèdent une double périodicité 
+      dans le plan complexe, propriété centrale qui les distingue des fonctions élémentaires.
+    </p>
+    <p>
+      Ce cours part de la géométrie de l'ellipse pour construire ces fonctions pas à pas : 
+      définition via le paramétrage de l'ellipse, identités fondamentales, comportement aux 
+      cas limites (module k → 0 et k → 1), développements en séries, et application directe 
+      à la mécanique non linéaire. Conçu pour être accessible dès la fin de première année 
+      de CPGE (MPSI/PCSI), il peut servir de support théorique pour un TIPE en physique ou en mathématiques.
+    </p>
+
+    <h2>Téléchargement</h2>
+    <div class="files">
+      <a class="file-card" href="Fonctions Elliptiques de Jacobi - Noah Roetman (FR).pdf" target="_blank">
+        <div class="file-info">
+          <div class="file-name">Fonctions Elliptiques de Jacobi — Théorie et Applications</div>
+          <div class="file-desc">PDF · 24 Pages</div>
+        </div>
+        <div class="file-icon">↗ pdf</div>
+      </a>
+    </div>
+
+    <p class="references">
+      Références :
+      <a href="https://en.wikipedia.org/wiki/Elliptic_function#Double_periodicity" style="color:inherit;">Périodicité complexe (Wikipedia)</a>,
+      <a href="https://mathworld.wolfram.com/JacobiEllipticFunctions.html" style="color:inherit;">Fonctions de Jacobi (MathWorld)</a>,
+      <a href="https://en.wikipedia.org/wiki/Elliptic_integral" style="color:inherit;">Intégrales elliptiques (Wikipedia)</a>.
+    </p>
+
+  </section>
+
+  <footer>
+    <span>Noah Roetman — 2026</span>
+    <a href="https://github.com/noahroetman">GitHub</a>
+  </footer>
+
+</div>
+</body>
+</html>
