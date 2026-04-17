@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exact Solution of the Simple Pendulum Without Small-Angle Approximation — Noah Roetman</title>
-  <meta name="description" content="Exact analytical solution of the simple pendulum at any initial amplitude, expressed in terms of Jacobi elliptic functions sn. Full proof and Python numerical verification.">
+  <title>Exact Solution of the Simple Pendulum</title>
+  <meta name="description" content="Exact analytical solution of the simple pendulum using Jacobi elliptic functions. Full proof and Python numerical verification.">
 
   <link rel="canonical" href="https://noahroetman.github.io/simple-pendulum.html" />
   <link rel="alternate" hreflang="en" href="https://noahroetman.github.io/simple-pendulum.html" />
@@ -131,7 +131,6 @@
     <div class="meta">
       <span>Noah Roetman</span>
       <span class="badge">Undergrad · Y1</span>
-      <span>2 pages · 2026</span>
     </div>
   </header>
 
@@ -139,22 +138,16 @@
 
     <h2>Background</h2>
     <p>
-      The equation of motion of the simple pendulum, <strong>θ̈ + (g/l) sin θ = 0</strong>, is exact 
-      but nonlinear. The small-angle approximation (sin θ ≈ θ) linearizes it into a harmonic oscillator — 
+      The equation of motion of the simple pendulum is nonlinear.
+      The small-angle approximation(sin θ ≈ θ) linearizes it into a harmonic oscillator,
       but is only valid below roughly 10°. Beyond that, the true period grows with amplitude 
       and the error becomes significant.
     </p>
     <p>
       Starting from conservation of energy, θ(t) can be expressed exactly for any initial 
-      amplitude θ₀ using Jacobi elliptic functions. The full derivation is in the PDF.
-    </p>
-
-    <h2>Result</h2>
-    <p>
-      The exact solution is <strong>θ(t) = 2 arcsin(k · sn(t√(g/l), k))</strong>, 
-      with <strong>k = sin(θ₀/2)</strong>. The exact period is 
-      <strong>T = 4√(l/g) · K(k)</strong>, where K(k) is the complete elliptic integral of the first kind. 
-      The Python script below compares this solution against numerical integration via <code>odeint</code>.
+      amplitude using Jacobi elliptic functions. </br>
+      The full proof is in the PDF. </br>
+      The Python script below compares this solution against numerical integration via odeint
     </p>
 
     <h2>Downloads</h2>
