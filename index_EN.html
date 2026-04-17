@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="canonical" href="https://noahroetman.github.io/index_EN.html" />
-  <link rel="alternate" hreflang="fr" href="https://noahroetman.github.io/index_FR.html" />
-  <link rel="alternate" hreflang="en" href="https://noahroetman.github.io/index_EN.html" />
-  <link rel="alternate" hreflang="x-default" href="https://noahroetman.github.io/index_FR.html" />
-
   <meta charset="UTF-8">
-
-  <script>
-    function setManualLanguage() {
-      sessionStorage.setItem('languageSelected', 'true');
-    }
-  </script>
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Noah Roetman - Mathematics and Applications</title>
   <meta name="description" content="My personal website: Work on Jacobi elliptic functions and the exact analytical solution for the simple pendulum.">
+
+  <link rel="canonical" href="https://noahroetman.github.io/index_EN.html" />
+  <link rel="alternate" hreflang="fr" href="https://noahroetman.github.io/" />
+  <link rel="alternate" hreflang="en" href="https://noahroetman.github.io/index_EN.html" />
+  <link rel="alternate" hreflang="x-default" href="https://noahroetman.github.io/" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Noah Roetman",
+    "url": "https://noahroetman.github.io/",
+    "sameAs": ["https://github.com/noahroetman"],
+    "jobTitle": "Student",
+    "knowsAbout": [
+      "Mathematics",
+      "Physics",
+      "Classical Mechanics",
+      "Jacobi Elliptic Functions",
+      "Python Programming",
+      "Numerical Simulations",
+      "Analytical Solutions"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  </head>
-  
-<style>
+
+  <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -57,13 +70,6 @@
       margin-bottom: 64px;
     }
 
-    .header-main {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
     .header-top {
       display: flex;
       justify-content: space-between;
@@ -77,7 +83,6 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 0;
     }
 
     h1 {
@@ -111,7 +116,7 @@
     }
 
     p { font-size: 1rem; margin-bottom: 1em; color: var(--ink); }
-    
+
     footer p {
       margin-top: 5px;
       font-size: 0.75rem;
@@ -120,9 +125,9 @@
 
     footer p a {
       color: inherit;
-      text-decoration: underline; 
+      text-decoration: underline;
     }
-    
+
     .files {
       display: grid;
       gap: 14px;
@@ -176,13 +181,13 @@
     }
 
     .file-card:hover .file-icon { opacity: 1; }
-    
+
     .references {
       margin-top: 30px;
       font-size: 0.8em;
       opacity: 0.4;
     }
-    
+
     footer {
       border-top: 1px solid var(--rule);
       margin-top: 80px;
@@ -265,9 +270,8 @@
       background-color: transparent;
       white-space: nowrap;
     }
-    
   </style>
-  
+</head>
 <body>
 <div class="page">
 
@@ -275,10 +279,10 @@
     <div class="header-top">
       <div class="site-label">noahroetman.github.io</div>
       <div class="lang-toggle">
-        <a href="index_FR.html" class="lang-btn">
+        <a href="index.html" onclick="sessionStorage.setItem('languageSelected','true')" class="lang-btn">
           <span class="flag">FR</span> 🇫🇷
         </a>
-        <a href="index_EN.html" onclick="setManualLanguage()" class="lang-btn active">
+        <a href="index_EN.html" class="lang-btn active">
           <span class="flag">EN</span> 🇺🇸
         </a>
       </div>
@@ -291,13 +295,13 @@
     <h2>Publications</h2>
 
     <h3>Jacobi Elliptic Functions <span class="badge-niveau">Undergrad | Y2</span></h3>
-    
+
     <p>
-      A comprehensive study ranging from the geometry of the ellipse to complex double periodicity. 
-      This course establishes the mathematical foundations necessary to manipulate these functions and understand how 
+      A comprehensive study ranging from the geometry of the ellipse to complex double periodicity.
+      This course establishes the mathematical foundations necessary to manipulate these functions and understand how
       they replace classical trigonometric tools in non-linear problems. Perfect for a research project.
     </p>
-    
+
     <div class="files" style="margin-bottom: 30px">
       <a class="file-card" href="Jacobi Elliptic Functions - Noah Roetman (EN).pdf" target="_blank">
         <div class="file-info">
@@ -309,9 +313,9 @@
     </div>
 
     <h3>Simple Pendulum <span class="badge-niveau">Undergrad | Y1</span></h3>
-      
+
     <p>
-      Unlike the small-angle approximation, this proof uses Jacobi functions to establish an exact analytical solution. 
+      Unlike the small-angle approximation, this proof uses Jacobi functions to establish an exact analytical solution.
       It rigorously describes the pendulum's motion for any initial amplitude.
     </p>
 
@@ -334,8 +338,8 @@
     </div>
 
     <p class="references">
-      External references for indexing: 
-      <a href="https://en.wikipedia.org/wiki/Elliptic_function#Double_periodicity" style="color: inherit;">Complex periodicity</a>, 
+      External references for indexing:
+      <a href="https://en.wikipedia.org/wiki/Elliptic_function#Double_periodicity" style="color: inherit;">Complex periodicity</a>,
       <a href="https://mathworld.wolfram.com/JacobiEllipticFunctions.html" style="color: inherit;">Jacobi Theory</a>.
     </p>
   </section>
